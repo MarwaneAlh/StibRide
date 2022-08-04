@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import org.controlsfx.control.SearchableComboBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="534.0" prefWidth="653.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presenter.Presenter">
+  <children>
+    <MenuBar prefHeight="35.0" prefWidth="653.0" VBox.vgrow="NEVER">
+      <menus>
+            <Menu mnemonicParsing="false">
+               <graphic>
+                  <Button fx:id="savewindows" mnemonicParsing="false" onAction="#actionOpenSave" prefHeight="25.0" prefWidth="33.0" stylesheets="@../style/stylesheet.css" />
+               </graphic>
+            </Menu>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="653.0" />
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="514.0" prefWidth="653.0" style="-fx-background-color: #daf1ff;" VBox.vgrow="ALWAYS">
+         <children>
+            <ImageView fx:id="logoStib" fitHeight="90.0" fitWidth="61.0" layoutX="81.0" layoutY="231.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/logo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="86.0" layoutY="323.0" prefHeight="17.0" prefWidth="51.0" text="Oirigine :" underline="true" />
+            <SearchableComboBox fx:id="listStationDestination" layoutX="24.0" layoutY="397.0" />
+            <SearchableComboBox fx:id="listStationDepart" layoutX="25.0" layoutY="348.0" />
+            <Label layoutX="76.0" layoutY="373.0" prefHeight="17.0" prefWidth="70.0" text="Destination :" underline="true" />
+            <Button fx:id="buttonSearch" layoutX="24.0" layoutY="433.0" mnemonicParsing="false" onAction="#actionSearch" prefHeight="25.0" prefWidth="87.0" text="Search" />
+            <TableView fx:id="tableStops" layoutX="287.0" layoutY="234.0" prefHeight="228.0" prefWidth="340.0" style="-fx-background-radius: 5;">
+              <columns>
+                <TableColumn fx:id="stations" prefWidth="169.33331298828125" text="Stations" />
+                <TableColumn fx:id="lignes" prefWidth="167.33334350585938" text="Lignes" />
+              </columns>
+            </TableView>
+            <Line endX="547.333251953125" layoutX="103.0" layoutY="471.0" startX="-99.99999237060547" stroke="#c7baba" />
+            <Label id="isFinish" fx:id="progress" layoutX="25.0" layoutY="472.0" prefHeight="25.0" prefWidth="122.0" />
+            <ScrollPane layoutX="4.0" layoutY="8.0" prefHeight="211.0" prefWidth="640.0" style="-fx-background: #daf1ff;">
+               <content>
+                  <ImageView fx:id="planStations" fitHeight="222.0" fitWidth="1104.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/metro.gif" />
+                     </image>
+                  </ImageView>
+               </content>
+            </ScrollPane>
+            <Label fx:id="nbStation" layoutX="457.0" layoutY="475.0" prefHeight="18.0" prefWidth="155.0" />
+            <Button fx:id="buttonSave" layoutX="137.0" layoutY="433.0" mnemonicParsing="false" onAction="#actionSave" prefHeight="25.0" prefWidth="61.0" text="Save" />
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>
